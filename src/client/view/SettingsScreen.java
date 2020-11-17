@@ -14,20 +14,17 @@ import common.View;
  *
  * @author tuananhdev
  */
-public class LoginScreen extends View implements Screen{
+public class SettingsScreen extends View implements Screen{
 
     /**
-     * Creates new form LoginScreen
+     * Creates new form SettingsScreen
      */
-    private Game game;
-    public LoginScreen(Game game) {
+    public SettingsScreen(Game game) {
         super(game);
         initComponents();
-        this.game = game;
         
         this.setSize(MyGame.WIDTH, MyGame.HEIGHT);
         this.setLocationRelativeTo(null);
-        
     }
 
     /**
@@ -39,27 +36,45 @@ public class LoginScreen extends View implements Screen{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Settings");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(206, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(155, 155, 155))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jLabel1)
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * @param args the command line arguments
+     */
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    // End of variables declaration//GEN-END:variables
+
     @Override
     public void update() {
-        System.out.println("Login Screen");
+        System.out.println("settings");
     }
-    
+
     @Override
     public void showScreen() {
         this.setVisible(true);
@@ -69,12 +84,4 @@ public class LoginScreen extends View implements Screen{
     public void hideScreen() {
         this.setVisible(false);
     }
-    
-    /**
-     * @param args the command line arguments
-     */
-
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
 }

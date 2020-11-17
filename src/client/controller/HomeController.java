@@ -5,7 +5,10 @@
  */
 package client.controller;
 
+import client.view.LoginScreen;
+import client.view.SettingsScreen;
 import common.Controller;
+import common.Screen;
 import common.View;
 import java.awt.event.ActionEvent;
 
@@ -34,14 +37,23 @@ public class HomeController extends Controller implements View.OnClickListener{
         System.out.println("Login !!");
         
         //init login view, login controller
+        Screen loginScreen = (Screen) new LoginScreen(this.view.game);
+        loginScreen.showScreen();
         
+        LoginController loginController = new LoginController((View) loginScreen);
+        
+        this.view.navigateTo(loginScreen);
     }
 
     private void showRank() {
+        
     }
 
     private void showSettings() {
+        Screen settingsScreen = (Screen) new SettingsScreen(this.view.game);
+        settingsScreen.showScreen();
         
+        this.view.navigateTo(settingsScreen);
     }
     
     

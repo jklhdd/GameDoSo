@@ -15,61 +15,28 @@ import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
  *
  * @author tuananhdev
  */
-public class View extends JFrame implements ActionListener{
+public abstract class View extends JFrame implements ActionListener{
 
     private int xMouse;
     private int yMouse;
-
-    public static int WIDTH = 680;
-    public static int HEIGHT = 460;
+    public Game game;
     
-
     public interface OnClickListener {
         void onClick(ActionEvent e);
     }
     
     protected OnClickListener onClickListener;
     
-    public View() throws HeadlessException {
+    public View(Game game) throws HeadlessException {
         super();
-        
-        this.setResizable(false);
- 
-        this.setLocationRelativeTo(null);
-        this.addMouseListener(new MouseAdapter() {
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                xMouse = e.getX();
-                yMouse = e.getY();
-            }
-            
-        });
-        
-        this.addMouseMotionListener(new MouseMotionAdapter() {
-
-            @Override
-            public void mouseDragged(MouseEvent e) {
-                int x = e.getXOnScreen();
-                int y = e.getYOnScreen();
-                
-                View.this.setLocation(x - xMouse, y - yMouse);
-            }
-        });
-        this.addWindowListener(new WindowAdapter() {
-
-            @Override
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-            
-        });
     }
     
     public void setOnClickListener(OnClickListener onClickListener) {
@@ -81,5 +48,7 @@ public class View extends JFrame implements ActionListener{
         onClickListener.onClick(e);
     }
     
-    
+    public void navigateTo(Screen screen) {
+        this.game.setScreen(screen);
+    }
 }

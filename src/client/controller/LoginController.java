@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package common;
+package client.controller;
+
+import common.Controller;
+import common.View;
 
 /**
  *
  * @author tuananhdev
  */
-public abstract class Controller {
-    public View view;
+public class LoginController extends Controller{
 
-    public Controller(View view) {
-        this.view = view;
+    public LoginController(View view) {
+        super(view);
     }
     
 }

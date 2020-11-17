@@ -9,11 +9,9 @@ package common;
  *
  * @author tuananhdev
  */
-public abstract class Controller {
-    public View view;
-
-    public Controller(View view) {
-        this.view = view;
-    }
+public interface Screen {    
+    public void update();
+    public void showScreen();
+    public void hideScreen();
     
 }

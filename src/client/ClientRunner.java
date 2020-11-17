@@ -7,19 +7,19 @@ package client;
 
 import client.controller.HomeController;
 import client.view.HomeScreen;
+import common.Game;
 import common.View;
 
 /**
  *
  * @author tuananhdev
  */
-public class ClientRunner {
+public class ClientRunner extends Game{
+    
     public static void main(String[] args) {
-        HomeScreen homeScreen = new HomeScreen();
-        homeScreen.setVisible(true);
-        homeScreen.setSize(View.WIDTH, View.HEIGHT);
-        
-        HomeController homeController = new HomeController(homeScreen);
-        
+                
+        //HomeController homeController = new HomeController(homeScreen);
+        MyGame game = new MyGame();
+        game.start();
     }
 }
