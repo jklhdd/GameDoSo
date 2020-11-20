@@ -14,11 +14,11 @@ import javax.swing.JFrame;
 public abstract class Game extends JFrame{
     public Screen screen;
     
-    public void update() {
-        if(this.screen != null) {
-            this.screen.update();
-        }
-    }
+//    public void update() {
+//        if(this.screen != null) {
+//            this.screen.update();
+//        }
+//    }
     
     public void setScreen(Screen screen) {
         if(this.screen != null) {

@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package client.controller;
-
 import client.view.LoginScreen;
-import client.view.SettingsScreen;
 import common.Controller;
 import common.Screen;
 import common.View;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,16 +35,17 @@ public class HomeController extends Controller implements View.OnClickListener{
         }
     }
 
-    private void login() {
-        System.out.println("Login !!");
-        
-        //init login view, login controller
-        Screen loginScreen = (Screen) new LoginScreen(this.view.game);
-        loginScreen.showScreen();
-        
-        LoginController loginController = new LoginController((View) loginScreen);
-        
-        this.view.navigateTo(loginScreen);
+    private void login() throws HeadlessException {
+        try {
+            
+            //init login view, login controller
+            Screen loginScreen = (Screen) new LoginScreen(this.view.game);
+            LoginController loginController = new LoginController((View) loginScreen);
+            this.view.game.setScreen(loginScreen);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void showRank() {
@@ -50,10 +53,10 @@ public class HomeController extends Controller implements View.OnClickListener{
     }
 
     private void showSettings() {
-        Screen settingsScreen = (Screen) new SettingsScreen(this.view.game);
-        settingsScreen.showScreen();
-        
-        this.view.navigateTo(settingsScreen);
+//        Screen settingsScreen = (Screen) new SettingsScreen(this.view.game);
+//        settingsScreen.showScreen();
+//        
+//        this.view.navigateTo(settingsScreen);
     }
     
     

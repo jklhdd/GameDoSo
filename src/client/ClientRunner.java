@@ -9,6 +9,8 @@ import client.controller.HomeController;
 import client.view.HomeScreen;
 import common.Game;
 import common.View;
+import java.awt.HeadlessException;
+import java.io.IOException;
 
 /**
  *
@@ -16,7 +18,7 @@ import common.View;
  */
 public class ClientRunner extends Game{
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws HeadlessException, IOException {
                 
         //HomeController homeController = new HomeController(homeScreen);
         MyGame game = new MyGame();

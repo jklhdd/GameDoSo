@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package server;
+package client;
 
 /**
  *
  * @author tuananhdev
  */
-public class ServerRunner {
-    public static void main(String[] args) {
-        
-    }
+public enum Status {
+   ONLINE, OFFLINE, PLAYING
 }

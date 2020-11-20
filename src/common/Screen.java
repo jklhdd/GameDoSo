@@ -10,8 +10,7 @@ package common;
  * @author tuananhdev
  */
 public interface Screen {    
-    public void update();
+    //public void update();
     public void showScreen();
     public void hideScreen();
-    
 }
