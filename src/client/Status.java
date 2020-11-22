@@ -10,5 +10,18 @@ package client;
  * @author tuananhdev
  */
 public enum Status {
-   ONLINE, OFFLINE, PLAYING
+   ONLINE, OFFLINE, PLAYING;
+   
+   public static Status intToStatus(int i){
+       switch (i) {
+           case 1:
+               return ONLINE;
+           case 2:
+               return OFFLINE;
+           case 3:
+               return PLAYING;
+           default:
+               return null;
+       }
+    }
 }
